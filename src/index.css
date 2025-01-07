@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+:root{
+
+    --first-color: #523364;
+    --seconde-color: #FFFFFF;
+    --third-color: #DBD6D9;
+    --forth-color: #404040;
+    --fifth-color: #838383;
+
+}
+
+html[lang="ar"] *,
+html[lang="ar"] {
+
+    font-family: "Cairo", sans-serif;
+
+}
+
+ul{
+
+    list-style: none;
+
+}
+
+a{
+
+    text-decoration: none;
+
+}
