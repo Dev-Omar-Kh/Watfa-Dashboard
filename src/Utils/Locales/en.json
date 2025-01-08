@@ -4,6 +4,15 @@
     "analytics_word": "Analytics",
     "users_word": "Users",
     "transactions_word": "Transactions",
-    "setting_word": "Settings"
+    "setting_word": "Settings",
+    "profileWord": "Profile",
+    "notificationWord": "Notifications",
+    "LanguageWord": "Language",
+    "arabicWord": "Arabic",
+    "englishWord": "English",
+    "arabicWordShort": "Ar",
+    "englishWordShort": "En",
+
+    "searchWord": "Search ..."
 
 }

@@ -18,8 +18,8 @@ i18n
     .init({
         resources,
         fallbackLng: 'en',
-        // lng: localStorage.getItem('language') || 'en',
-        lng: 'ar',
+        lng: localStorage.getItem('language') || 'ar',
+        // lng: 'ar',
 
         interpolation: {
             escapeValue: false

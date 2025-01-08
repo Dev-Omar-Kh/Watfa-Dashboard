@@ -14,6 +14,12 @@ html[lang="ar"] {
 
 }
 
+::-webkit-scrollbar {
+
+    width: 2px;
+
+}
+
 .container{
 
     width: 100%;
@@ -26,7 +32,10 @@ html[lang="ar"] {
 
     width: 100%;
     height: 80px;
-    padding: 28px 32px;
+    padding: 28px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -58,11 +67,13 @@ html[lang="ar"] {
 .nav_side{
 
     width: 100%;
-    padding-top: 32px;
+    height: calc(100% - 80px);
+    padding: 32px 0px;
+    overflow: auto;
 
 }
 
-.nav_side ul{
+.nav_side .nav_bar_ul{
 
     display: flex;
     flex-direction: column;
@@ -70,41 +81,105 @@ html[lang="ar"] {
 
 }
 
-.nav_side ul li{
+.nav_side .nav_bar_ul li{
 
     width: 100%;
 
 }
 
-.nav_side ul li a{
+.actions_phone{
+
+    display: none;
+
+}
+
+.nav_side .nav_bar_ul li a , .nav_btn{
 
     width: 100%;
-    padding: 16px 32px;
+    padding: 16px 9%;
     display: flex;
     align-items: center;
     gap: 10px;
     color: var(--third-color);
+    border: none;
+    background-color: transparent;
     transition: 0.3s;
-
-    &:hover{
-
-        color: var(--first-color);
-        background-color: var(--third-color);
-
-    }
 
 }
 
-.nav_side ul li a svg{
+.nav_side .nav_bar_ul li a:hover {
+
+    color: var(--first-color);
+    background-color: var(--third-color);
+
+}
+
+.nav_btn{
+
+    justify-content: space-between;
+    cursor: pointer;
+
+}
+
+.btn_l_side{
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.nav_side .nav_bar_ul li a svg , .nav_btn svg{
 
     font-size: 1.5rem;
 
 }
 
-.nav_side ul li a p{
+.nav_side .nav_bar_ul li a p , .btn_l_side p{
 
     font-size: 1.15rem;
     font-weight: 500;
+
+}
+
+.arrowList{
+
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.link_det{
+
+    overflow: hidden;
+    background-color: var(--third-color);
+
+}
+
+.link_det li{
+
+    padding: 10px 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--first-color);
+    cursor: pointer;
+    
+    &:first-child{
+
+        border-bottom: 1px solid var(--first-color);
+
+    }
+
+}
+
+.link_det li svg{
+
+    font-size: 1.25rem;
 
 }
 
@@ -133,15 +208,21 @@ html[lang="ar"] {
 
     }
 
-    .nav_side ul li a svg{
+    .nav_btn{
+
+        justify-content: center;
+
+    }
+
+    .nav_side ul li a svg , .nav_btn svg{
 
         font-size: 1.8rem;
 
     }
 
-    .nav_side ul li a p{
+    .nav_side ul li a p , .btn_l_side p , .arrowList{
 
-        display: none;
+        display: none ;
 
     }
 
@@ -151,6 +232,7 @@ html[lang="ar"] {
 
     .logo{
 
+        padding: 25px 4.5%;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -160,6 +242,12 @@ html[lang="ar"] {
     .close_nav{
 
         display: flex;
+
+    }
+
+    .actions_phone{
+
+        display: inline-block;
 
     }
 

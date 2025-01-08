@@ -37,6 +37,7 @@
 
     width: 100%;
     min-height: calc(100% - 80px);
+    padding: 0px 2.5%;
     /* background-color: blue; */
 
 }
@@ -48,6 +49,12 @@
     .side_bar{
 
         width: 120px;
+
+    }
+
+    .main_side{
+
+        width: calc(100% - 120px);
 
     }
 

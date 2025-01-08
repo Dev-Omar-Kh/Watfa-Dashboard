@@ -15,6 +15,25 @@
     --third-color: #DBD6D9;
     --forth-color: #404040;
     --fifth-color: #838383;
+    --sixth-color: #F5F6F7;
+
+}
+
+::-webkit-scrollbar {
+
+    width: 5px;
+    background-color: var(--seconde-color);
+    transition: 0.3s;
+
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background-color: var(--first-color);
 
 }
 

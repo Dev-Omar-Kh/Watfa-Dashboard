@@ -4,6 +4,15 @@
     "analytics_word": "التحليلات",
     "users_word": "المستخدمون",
     "transactions_word": "التحويلات",
-    "setting_word": "الاعدادات"
+    "setting_word": "الاعدادات",
+    "profileWord": "الملف الشخصي",
+    "notificationWord": "الاشعارات",
+    "LanguageWord": "اللغة",
+    "arabicWord": "العربية",
+    "englishWord": "الانجليزية",
+    "arabicWordShort": "عر",
+    "englishWordShort": "E",
+
+    "searchWord": "ابحث عن ..."
 
 }

@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import LayoutCSS from './layout.module.css';
 import SideBar from '../Components/Side_Bar/SideBar';
 import { useTranslation } from 'react-i18next';
+import Header from '../Components/Header/Header';
 
 export default function Layout() {
 
@@ -31,7 +32,11 @@ export default function Layout() {
 
             <div className={LayoutCSS.main_side}>
 
-                <div className={LayoutCSS.header}></div>
+                <div className={LayoutCSS.header}>
+
+                    <Header displayPhoneNav={setDisplayPhoneNav} />
+
+                </div>
 
                 <div className={LayoutCSS.pages}>
 
