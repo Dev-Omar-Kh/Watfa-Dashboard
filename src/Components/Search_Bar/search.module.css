@@ -3,7 +3,15 @@
     display: flex;
     border-radius: 8px;
     background-color: var(--sixth-color);
+    border: 1px solid transparent;
+    transition: 0.3s;
     overflow: hidden;
+    
+        &:focus-within {
+    
+            border-color: var(--first-color);
+    
+        }
 
 }
 

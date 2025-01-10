@@ -10,7 +10,7 @@ export default function Layout() {
 
     const {i18n} = useTranslation();
 
-    const [displayPhoneNav, setDisplayPhoneNav] = useState(true);
+    const [displayPhoneNav, setDisplayPhoneNav] = useState(false);
 
     return <React.Fragment>
 

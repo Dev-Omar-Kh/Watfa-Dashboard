@@ -13,6 +13,44 @@
     "arabicWordShort": "عر",
     "englishWordShort": "E",
 
-    "searchWord": "ابحث عن ..."
+    "searchWord": "ابحث عن ...",
+
+    "totalClientsWord": "كل العملاء",
+    "totalOrdersWord": "كل الطلبات",
+    "revenueWord": "الربح",
+    "overduePaymentsWord": "المدفوعات المتاخرة",
+
+    "lastWeekWord": "الاسبوع الماضي",
+    "thisWeekWord": "الاسبوع الحالي",
+    "weekDaySun": "الاحد",
+    "weekDayMon": "الاثنين",
+    "weekDayTue": "الثلاثاء",
+    "weekDayWed": "الاربعاء",
+    "weekDayThu": "الخميس",
+    "weekDayFri": "الجمعة",
+    "weekDaySat": "السبت",
+
+    "lastYearWord": "العام الماضي",
+    "thisYearWord": "العام الحالي",
+    "janMonth": "يناير",
+    "febMonth": "فبراير",
+    "marMonth": "مارس",
+    "aprMonth": "أبريل",
+    "mayMonth": "مايو",
+    "junMonth": "يونيو",
+    "julMonth": "يوليو",
+    "augMonth": "أغسطس",
+    "sepMonth": "سبتمبر",
+    "octMonth": "أكتوبر",
+    "novMonth": "نوفمبر",
+    "decMonth": "ديسمبر",
+
+    "lastDayWord": "اليوم الماضي",
+    "thisDayWord": "اليوم الحالي",
+
+    "revenue": "الربح",
+    "todayWord": "يومي",
+    "weeklyWord": "اسبوعي",
+    "yearlyWord": "سنوي"
 
 }

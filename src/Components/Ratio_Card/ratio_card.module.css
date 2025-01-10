@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.card{
+
+    width: calc(25% - 15px);
+    padding: 22px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "Manrope", serif;
+    border-radius: 12px;
+    background-color: var(--sixth-color);
+    overflow: hidden;
+
+}
+
+.card_number{
+
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 38.4px;
+    color: var(--forth-color);
+
+}
+
+.card_title{
+
+    font-size: 1.5rem;
+    line-height: 36px;
+    color: var(--fifth-color);
+
+}
+
+/* ====== responsive-style ====== */
+
+@media only screen and (max-width: 940px){
+
+    .card{
+
+        width: calc(50% - 10px);
+
+    }
+
+}
+
+@media only screen and (max-width: 675px){
+
+    .card{
+
+        width: 100%;
+
+    }
+
+}

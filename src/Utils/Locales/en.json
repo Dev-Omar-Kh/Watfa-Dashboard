@@ -13,6 +13,44 @@
     "arabicWordShort": "Ar",
     "englishWordShort": "En",
 
-    "searchWord": "Search ..."
+    "searchWord": "Search ...",
+
+    "totalClientsWord": "Total Clients",
+    "totalOrdersWord": "Total Orders",
+    "revenueWord": "Revenue",
+    "overduePaymentsWord": "Overdue Payments",
+
+    "lastWeekWord": "Last Week",
+    "thisWeekWord": "This Week",
+    "weekDaySun": "Sun",
+    "weekDayMon": "Mon",
+    "weekDayTue": "Tue",
+    "weekDayWed": "Wed",
+    "weekDayThu": "Thu",
+    "weekDayFri": "Fri",
+    "weekDaySat": "Sat",
+
+    "lastYearWord": "Last Year",
+    "thisYearWord": "This Year",
+    "janMonth": "JAN",
+    "febMonth": "FEB",
+    "marMonth": "MAR",
+    "aprMonth": "APR",
+    "mayMonth": "MAY",
+    "junMonth": "JUN",
+    "julMonth": "JUL",
+    "augMonth": "AUG",
+    "sepMonth": "SEP",
+    "octMonth": "OCT",
+    "novMonth": "NOV",
+    "decMonth": "DEC",
+
+    "lastDayWord": "Last Day",
+    "thisDayWord": "This Day",
+
+    "revenue": "Revenue",
+    "todayWord": "Daily",
+    "weeklyWord": "Weekly",
+    "yearlyWord": "Yearly"
 
 }

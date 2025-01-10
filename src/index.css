@@ -40,7 +40,7 @@
 html[lang="ar"] *,
 html[lang="ar"] {
 
-    font-family: "Cairo", sans-serif;
+    font-family: "Cairo", sans-serif !important;
 
 }
 

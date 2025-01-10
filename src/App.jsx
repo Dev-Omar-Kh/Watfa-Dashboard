@@ -2,13 +2,14 @@ import React, { useEffect } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import { useTranslation } from 'react-i18next';
+import Home from './Pages/Home/Home';
 
 const routes = createBrowserRouter(
     [
 
         {path: '/', element: <Layout />, children: [
 
-            {path: '/', element: <></>}
+            {path: '/', element: <Home />},
 
         ]}
 
