@@ -100,49 +100,49 @@ export default function SideBar({displayNav}) {
                 <ul className={sideBarCSS.nav_bar_ul}>
 
                     <li>
-                        <NavLink className='side_bar_link' to={'/'}>
+                        <NavLink onClick={() => displayNav(false)} className='side_bar_link' to={'/'}>
                             <RxDashboard />
                             <p>{t('dashboard_word')}</p>
                         </NavLink>
                     </li>
 
                     <li>
-                        <NavLink className='side_bar_link' to={'/analytics'}>
+                        <NavLink onClick={() => displayNav(false)} className='side_bar_link' to={'/analytics'}>
                             <LuChartSpline />
                             <p>{t('analytics_word')}</p>
                         </NavLink>
                     </li>
 
                     <li>
-                        <NavLink className='side_bar_link' to={'/users'}>
+                        <NavLink onClick={() => displayNav(false)} className='side_bar_link' to={'/users'}>
                             <LuUsersRound />
                             <p>{t('users_word')}</p>
                         </NavLink>
                     </li>
 
                     <li>
-                        <NavLink className='side_bar_link' to={'/transactions'}>
+                        <NavLink onClick={() => displayNav(false)} className='side_bar_link' to={'/transactions'}>
                             <FaArrowsTurnToDots />
                             <p>{t('transactions_word')}</p>
                         </NavLink>
                     </li>
 
                     <li>
-                        <NavLink className='side_bar_link' to={'/setting'}>
+                        <NavLink onClick={() => displayNav(false)} className='side_bar_link' to={'/setting'}>
                             <IoSettingsOutline />
                             <p>{t('setting_word')}</p>
                         </NavLink>
                     </li>
 
                     <li className={sideBarCSS.actions_phone}>
-                        <NavLink className='side_bar_link' to={'/profile'}>
+                        <NavLink onClick={() => displayNav(false)} className='side_bar_link' to={'/profile'}>
                             <IoPerson />
                             <p>{t('profileWord')}</p>
                         </NavLink>
                     </li>
 
                     <li className={sideBarCSS.actions_phone}>
-                        <NavLink className='side_bar_link' to={'/notifications'}>
+                        <NavLink onClick={() => displayNav(false)} className='side_bar_link' to={'/notifications'}>
                             <IoNotificationsOutline />
                             <p>{t('notificationWord')}</p>
                         </NavLink>

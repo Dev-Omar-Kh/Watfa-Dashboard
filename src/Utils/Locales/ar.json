@@ -51,6 +51,12 @@
     "revenue": "الربح",
     "todayWord": "يومي",
     "weeklyWord": "اسبوعي",
-    "yearlyWord": "سنوي"
+    "yearlyWord": "سنوي",
+
+    "salesWord": "المبيعات",
+    "returnWord": "المرتجعات",
+
+    "showWord":"اظهار",
+    "downloadReport": "تحميل التقرير"
 
 }

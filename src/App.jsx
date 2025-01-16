@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import { useTranslation } from 'react-i18next';
 import Home from './Pages/Home/Home';
+import Users from './Pages/Users/Users';
+import Analytics from './Pages/Analytics/Analytics';
 
 const routes = createBrowserRouter(
     [
@@ -10,6 +12,8 @@ const routes = createBrowserRouter(
         {path: '/', element: <Layout />, children: [
 
             {path: '/', element: <Home />},
+            {path: '/analytics', element: <Analytics />},
+            {path: '/users', element: <Users />},
 
         ]}
 

@@ -156,7 +156,7 @@ export default function Home() {
 
             title: {
                 display: false,
-                text: "Monthly Sales Data",
+                text: "Sales Data",
             },
 
             filler: {
@@ -173,7 +173,7 @@ export default function Home() {
 
             <div className={homeCSS.summary}>
 
-                {homeData.map(data => <RatioCard key={data.id} cardData={data} />)}
+                {homeData.map(data => <RatioCard count={4} key={data.id} cardData={data} />)}
 
             </div>
 

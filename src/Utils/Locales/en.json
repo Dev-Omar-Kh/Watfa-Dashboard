@@ -51,6 +51,12 @@
     "revenue": "Revenue",
     "todayWord": "Daily",
     "weeklyWord": "Weekly",
-    "yearlyWord": "Yearly"
+    "yearlyWord": "Yearly",
+
+    "salesWord": "Sales",
+    "returnWord": "Return",
+
+    "showWord":"Show",
+    "downloadReport": "Download Report"
 
 }
