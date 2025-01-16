@@ -16,10 +16,10 @@ export default function Home() {
 
     const homeData = [
 
-        {id: 0, title: t('totalClientsWord'), num: '230'},
-        {id: 1, title: t('totalOrdersWord'), num: '180'},
-        {id: 2, title: t('revenueWord'), num: '140'},
-        {id: 3, title: t('overduePaymentsWord'), num: '80'},
+        {id: 0, title: 'totalClientsWord', num: '230'},
+        {id: 1, title: 'totalOrdersWord', num: '180'},
+        {id: 2, title: 'revenueWord', num: '140'},
+        {id: 3, title: 'overduePaymentsWord', num: '80'},
 
     ];
 

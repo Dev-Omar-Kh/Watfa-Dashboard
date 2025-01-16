@@ -153,3 +153,16 @@
     height: 400px;
 
 }
+
+/* ====== responsive-style ====== */
+
+@media only screen and (max-width: 400px){
+
+    .report{
+
+        min-width: 100%;
+        justify-content: center;
+
+    }
+
+}

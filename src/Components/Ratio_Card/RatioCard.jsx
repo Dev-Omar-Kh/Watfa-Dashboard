@@ -2,24 +2,27 @@ import React, { useEffect, useState } from 'react';
 
 import cardCSS from './ratio_card.module.css';
 import { LuTrendingDown, LuTrendingUp } from 'react-icons/lu';
+import { useTranslation } from 'react-i18next';
 
 export default function RatioCard({cardData , count}) {
 
+    const { t } = useTranslation();
+
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     
-        useEffect(() => {
-    
-            const handleResize = () => {
-                setWindowWidth(window.innerWidth);
-            };
-    
-            window.addEventListener('resize', handleResize);
-    
-            return () => {
-                window.removeEventListener('resize', handleResize);
-            };
-    
-        }, []);
+    useEffect(() => {
+
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+
+    }, []);
 
     return <React.Fragment>
 
@@ -32,7 +35,7 @@ export default function RatioCard({cardData , count}) {
 
             <div className={cardCSS.rate_cont}>
 
-                <p className={cardCSS.card_title}>{cardData.title}</p>
+                <p className={cardCSS.card_title}>{t(cardData.title)}</p>
 
                 {cardData.rate && <span
                     className={cardCSS.rate}

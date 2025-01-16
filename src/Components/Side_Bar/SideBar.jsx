@@ -68,6 +68,10 @@ export default function SideBar({displayNav}) {
         localStorage.setItem('language', lang);
         setDisplayList(false);
 
+        setTimeout(() => {
+            displayNav(false);
+        }, 300);
+
     };
 
     // ====== framer-motion ====== //

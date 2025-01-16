@@ -41,22 +41,22 @@ export default function Analytics() {
 
     const analyticsDataThisYear = [
 
-        {id: 0, title: t('salesWord'), num: '$ 48.8K', rate: '+3.4%'},
-        {id: 1, title: t('returnWord'), num: '$ 12.2K', rate: '-1.2%'},
+        {id: 0, title: 'salesWord', num: '$ 48.8K', rate: '+3.4%'},
+        {id: 1, title: 'returnWord', num: '$ 12.2K', rate: '-1.2%'},
 
     ];
 
     const analyticsDataThisWeek = [
 
-        {id: 0, title: t('salesWord'), num: '$ 16.3K', rate: '+2.1%'},
-        {id: 1, title: t('returnWord'), num: '$ 8.6K', rate: '-1.8%'},
+        {id: 0, title: 'salesWord', num: '$ 16.3K', rate: '+2.1%'},
+        {id: 1, title: 'returnWord', num: '$ 8.6K', rate: '-1.8%'},
 
     ];
 
     const analyticsDataThisDay = [
 
-        {id: 0, title: t('salesWord'), num: '$ 6.4K', rate: '+1.3%'},
-        {id: 1, title: t('returnWord'), num: '$ 2.2K', rate: '-1.1%'},
+        {id: 0, title: 'salesWord', num: '$ 6.4K', rate: '+1.3%'},
+        {id: 1, title: 'returnWord', num: '$ 2.2K', rate: '-1.1%'},
 
     ];
 
@@ -181,7 +181,7 @@ export default function Analytics() {
             y: {
                 beginAtZero: true,
                 ticks: {
-                    stepSize: 200,
+                    // stepSize: 200,
                     callback: function (value) {
                         return value;
                     },
@@ -260,19 +260,19 @@ export default function Analytics() {
                             >
 
                                 <li 
-                                    className={yearTime && analyticsCSS.chosen_time} 
+                                    className={yearTime ? analyticsCSS.chosen_time : ''} 
                                     onClick={() => chooseChart(setYearTime, t('thisYearWord'), analyticsDataThisYear)}
                                 >
                                     {t('thisYearWord')}
                                 </li>
                                 <li 
-                                    className={weekTime && analyticsCSS.chosen_time} 
+                                    className={weekTime ? analyticsCSS.chosen_time : ''} 
                                     onClick={() => chooseChart(setWeekTime, t('thisWeekWord'), analyticsDataThisWeek)}
                                 >
                                     {t('thisWeekWord')}
                                 </li>
                                 <li 
-                                    className={dayTime && analyticsCSS.chosen_time} 
+                                    className={dayTime ? analyticsCSS.chosen_time : ''} 
                                     onClick={() => chooseChart(setDayTime, t('thisDayWord'), analyticsDataThisDay)}
                                 >
                                     {t('thisDayWord')}

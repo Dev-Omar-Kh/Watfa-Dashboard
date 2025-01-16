@@ -29,7 +29,7 @@
     left: 0;
     width: 100%;
     height: 80px;
-    z-index: 100;
+    z-index: 90;
 
 }
 
@@ -70,6 +70,7 @@
         visibility: hidden;
         transition: 0.3s;
         z-index: 100;
+        
 
     }
 
