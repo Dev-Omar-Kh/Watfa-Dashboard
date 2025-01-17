@@ -57,6 +57,12 @@
     "returnWord": "Return",
 
     "showWord":"Show",
-    "downloadReport": "Download Report"
+    "downloadReport": "Download Report",
+
+    "filterWord": "Filter",
+    "allUsersWord": "All Users",
+    "pendingUsersWord": "Pending Users",
+    "acceptedUsersWord": "Accepted Users",
+    "declinedUsersWord": "Declined Users"
 
 }

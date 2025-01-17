@@ -97,7 +97,7 @@ export default function Analytics() {
     const [yearTime, setYearTime] = useState(true);
     const [weekTime, setWeekTime] = useState(false);
     const [dayTime, setDayTime] = useState(false);
-    const [spanWord, setSpanWord] = useState(t('thisYearWord'));
+    const [spanWord, setSpanWord] = useState('thisYearWord');
 
     const [analyticsData, setAnalyticsData] = useState(analyticsDataThisYear);
 
@@ -236,7 +236,7 @@ export default function Analytics() {
                     <button className={analyticsCSS.time_btn} onClick={() => setDisplayAllTimes(!displayAllTimes)}>
 
                         <p>{t('showWord')} :</p>
-                        <span>{spanWord}</span>
+                        <span>{t(spanWord)}</span>
 
                         {i18n.language === 'en' ? 
                             <div style={{rotate: displayAllTimes ? '90deg' : '0deg'}} className={analyticsCSS.arrowList}>
@@ -261,19 +261,19 @@ export default function Analytics() {
 
                                 <li 
                                     className={yearTime ? analyticsCSS.chosen_time : ''} 
-                                    onClick={() => chooseChart(setYearTime, t('thisYearWord'), analyticsDataThisYear)}
+                                    onClick={() => chooseChart(setYearTime, 'thisYearWord', analyticsDataThisYear)}
                                 >
                                     {t('thisYearWord')}
                                 </li>
                                 <li 
                                     className={weekTime ? analyticsCSS.chosen_time : ''} 
-                                    onClick={() => chooseChart(setWeekTime, t('thisWeekWord'), analyticsDataThisWeek)}
+                                    onClick={() => chooseChart(setWeekTime, 'thisWeekWord', analyticsDataThisWeek)}
                                 >
                                     {t('thisWeekWord')}
                                 </li>
                                 <li 
                                     className={dayTime ? analyticsCSS.chosen_time : ''} 
-                                    onClick={() => chooseChart(setDayTime, t('thisDayWord'), analyticsDataThisDay)}
+                                    onClick={() => chooseChart(setDayTime, 'thisDayWord', analyticsDataThisDay)}
                                 >
                                     {t('thisDayWord')}
                                 </li>

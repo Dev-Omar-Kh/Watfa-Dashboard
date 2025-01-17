@@ -84,6 +84,7 @@
     justify-content: space-between;
     font-size: 1rem;
     color: var(--forth-color);
+    border-bottom: 1px solid var(--third-color);
     cursor: pointer;
     transition: 0.3s;
 
@@ -94,9 +95,9 @@
 
     }
 
-    &:nth-child(2){
+    &:last-child{
 
-        border-block: 1px solid var(--third-color);
+        border-bottom: none;
 
     }
 

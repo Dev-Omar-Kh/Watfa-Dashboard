@@ -57,6 +57,12 @@
     "returnWord": "المرتجعات",
 
     "showWord":"اظهار",
-    "downloadReport": "تحميل التقرير"
+    "downloadReport": "تحميل التقرير",
+
+    "filterWord": "تصفية",
+    "allUsersWord": "كل المستخدمين",
+    "pendingUsersWord": "قيد المراجعة",
+    "acceptedUsersWord": "المقبولين",
+    "declinedUsersWord": "المرفوضين"
 
 }
