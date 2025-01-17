@@ -157,17 +157,17 @@ export default function Users() {
 
             <div className={tableCSS.table_cont}>
 
-                <table className={tableCSS.table}>
+                <table className={`${tableCSS.table} ${i18n.language === 'en' ? tableCSS.table_en : tableCSS.table_ar}`}>
 
                     <thead>
 
                         <tr>
 
-                            <th>User Name</th>
-                            <th>User Email</th>
-                            <th>User Phone</th>
-                            <th>User Role</th>
-                            <th>User Ban</th>
+                            <th>{t('userNameWord')}</th>
+                            <th>{t('emailWord')}</th>
+                            <th>{t('phoneNumWord')}</th>
+                            <th>{t('statusWord')}</th>
+                            <th>{t('actionsWord')}</th>
 
                         </tr>
 

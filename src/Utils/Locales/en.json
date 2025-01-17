@@ -63,6 +63,12 @@
     "allUsersWord": "All Users",
     "pendingUsersWord": "Pending Users",
     "acceptedUsersWord": "Accepted Users",
-    "declinedUsersWord": "Declined Users"
+    "declinedUsersWord": "Declined Users",
+
+    "userNameWord": "User Name",
+    "emailWord": "Email",
+    "phoneNumWord": "Phone Number",
+    "statusWord": "Status",
+    "actionsWord": "Actions"
 
 }

@@ -63,6 +63,12 @@
     "allUsersWord": "كل المستخدمين",
     "pendingUsersWord": "قيد المراجعة",
     "acceptedUsersWord": "المقبولين",
-    "declinedUsersWord": "المرفوضين"
+    "declinedUsersWord": "المرفوضين",
+
+    "userNameWord": "اسم المستخدم",
+    "emailWord": "الايميل",
+    "phoneNumWord": "رقم الهاتف",
+    "statusWord": "الحالة",
+    "actionsWord": "الاحداث"
 
 }

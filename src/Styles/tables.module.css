@@ -36,23 +36,43 @@
 
 }
 
-.table th:nth-child(1) {
+.table_en th:nth-child(1) {
 
     border-top-left-radius: 6px;
 
 }
 
-.table th:nth-child(2),
-.table th:nth-child(3),
-.table th:nth-child(4),
-.table th:nth-child(5),
-.table td:nth-child(1),
-.table td:nth-child(2),
-.table td:nth-child(3),
-.table td:nth-child(4),
-.table td:nth-child(5) {
+.table_ar th:nth-child(1) {
+
+    border-top-right-radius: 6px;
+
+}
+
+.table_en th:nth-child(2),
+.table_en th:nth-child(3),
+.table_en th:nth-child(4),
+.table_en th:nth-child(5),
+.table_en td:nth-child(1),
+.table_en td:nth-child(2),
+.table_en td:nth-child(3),
+.table_en td:nth-child(4),
+.table_en td:nth-child(5) {
 
     border-left: 1px solid var(--third-color);
+
+}
+
+.table_ar th:nth-child(2),
+.table_ar th:nth-child(3),
+.table_ar th:nth-child(4),
+.table_ar th:nth-child(5),
+.table_ar td:nth-child(1),
+.table_ar td:nth-child(2),
+.table_ar td:nth-child(3),
+.table_ar td:nth-child(4),
+.table_ar td:nth-child(5) {
+
+    border-right: 1px solid var(--third-color);
 
 }
 
@@ -62,9 +82,15 @@
 
 }
 
-.table th:last-child {
+.table_en th:last-child {
 
     border-top-right-radius: 6px;
+
+}
+
+.table_ar th:last-child {
+
+    border-top-left-radius: 6px;
 
 }
 
