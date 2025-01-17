@@ -69,6 +69,10 @@
     "emailWord": "Email",
     "phoneNumWord": "Phone Number",
     "statusWord": "Status",
-    "actionsWord": "Actions"
+    "actionsWord": "Actions",
+
+    "pendingWord": "Pending",
+    "acceptedWord": "Accepted",
+    "declinedWord": "Declined"
 
 }

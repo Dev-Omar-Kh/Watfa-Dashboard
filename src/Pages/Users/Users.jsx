@@ -184,11 +184,11 @@ export default function Users() {
                                 <div className={`
                                     ${tableCSS.status_span} 
                                     ${
-                                        user.status === 'accepted' ? tableCSS.accepted_span : 
-                                        user.status === 'declined' ? tableCSS.declined_span : tableCSS.pending_span
+                                        user.status === 'acceptedWord' ? tableCSS.accepted_span : 
+                                        user.status === 'declinedWord' ? tableCSS.declined_span : tableCSS.pending_span
                                     }
                                 `}>
-                                    {user.status}
+                                    {t(user.status)}
                                 </div>
                             </td>
                             <td>

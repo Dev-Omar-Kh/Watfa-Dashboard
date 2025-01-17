@@ -69,6 +69,10 @@
     "emailWord": "الايميل",
     "phoneNumWord": "رقم الهاتف",
     "statusWord": "الحالة",
-    "actionsWord": "الاحداث"
+    "actionsWord": "الاحداث",
+
+    "pendingWord": "قيد المراجعة",
+    "acceptedWord": "مقبول",
+    "declinedWord": "مرفوض"
 
 }
