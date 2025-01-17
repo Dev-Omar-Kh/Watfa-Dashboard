@@ -126,21 +126,21 @@ export default function Users() {
 
                                 <li 
                                     className={pendingUsers ? usersCSS.chosen_time : ''} 
-                                    onClick={() => chooseUsersStatus(setPendingUsers, 'pendingUsersWord', 'pending')}
+                                    onClick={() => chooseUsersStatus(setPendingUsers, 'pendingUsersWord', 'pendingWord')}
                                 >
                                     {t('pendingUsersWord')}
                                 </li>
 
                                 <li 
                                     className={acceptedUsers ? usersCSS.chosen_time : ''} 
-                                    onClick={() => chooseUsersStatus(setAcceptedUsers, 'acceptedUsersWord', 'accepted')}
+                                    onClick={() => chooseUsersStatus(setAcceptedUsers, 'acceptedUsersWord', 'acceptedWord')}
                                 >
                                     {t('acceptedUsersWord')}
                                 </li>
 
                                 <li 
                                     className={declinedUsers ? usersCSS.chosen_time : ''} 
-                                    onClick={() => chooseUsersStatus(setDeclinedUsers, 'declinedUsersWord', 'declined')}
+                                    onClick={() => chooseUsersStatus(setDeclinedUsers, 'declinedUsersWord', 'declinedWord')}
                                 >
                                     {t('declinedUsersWord')}
                                 </li>
