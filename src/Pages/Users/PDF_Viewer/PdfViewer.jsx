@@ -6,14 +6,15 @@ import pdfViewerCSS from './pdf_viewer.module.css';
 
 export default function PdfViewer() {
 
-    const pdfImg = 'https://res.cloudinary.com/dmkh4y8bw/image/upload/v1737311609/%D8%A3%D9%88%D8%B1%D8%A7%D9%82-%D8%A7%D9%84%D8%AA%D8%A7%D8%AC%D8%B1-%D9%84%D9%84%D8%AA%D8%B3%D8%AC%D9%8A%D9%84-%D9%A1_utj6si.pdf'
+    const pdfImg = 'https://res.cloudinary.com/dmkh4y8bw/image/upload/v1737311609/%D8%A3%D9%88%D8%B1%D8%A7%D9%82-%D8%A7%D9%84%D8%AA%D8%A7%D8%AC%D8%B1-%D9%84%D9%84%D8%AA%D8%B3%D8%AC%D9%8A%D9%84-%D9%A1_utj6si.pdf';
+    const decodedFileName = decodeURIComponent(pdfImg);
 
     return <React.Fragment>
 
         <div className={pdfViewerCSS.container}>
 
             <iframe
-                src={pdfImg}
+                src={decodedFileName}
                 title="PDF Viewer"
                 className={pdfViewerCSS.i_frame}
             />
