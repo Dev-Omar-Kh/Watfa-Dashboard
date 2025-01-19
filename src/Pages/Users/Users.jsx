@@ -10,6 +10,7 @@ import UsersData from './UsersData';
 
 import usersCSS from './users.module.css';
 import tableCSS from '../../Styles/tables.module.css';
+import WarningMsg from '../../Components/Warning_Msg/WarningMsg';
 
 export default function Users() {
 
@@ -71,6 +72,25 @@ export default function Users() {
 
     }
 
+    // ====== delete-user ====== //
+
+    const [displayWarn, setDisplayWarn] = useState(false);
+    const [userToDelete, setUserToDelete] = useState(null);
+
+    const deleteUserFS = (user) => {
+
+        setDisplayWarn(true);
+        setUserToDelete(user);
+
+    }
+
+    const acceptDeleteUser = (id) => {
+
+        setUsersDataFiltered(usersDataFiltered.filter(users => users.id !== id));
+        setDisplayWarn(false);
+
+    }
+
     // ====== animation ====== //
 
     const listAnimation = {
@@ -82,6 +102,12 @@ export default function Users() {
     }
 
     return <React.Fragment>
+
+        <AnimatePresence>
+
+            {displayWarn && <WarningMsg data={userToDelete} deleteData={acceptDeleteUser} cancel={setDisplayWarn} />}
+
+        </AnimatePresence>
 
         <div className={usersCSS.container}>
 
@@ -194,11 +220,12 @@ export default function Users() {
                             <td>
                                 <button 
                                     className={`${tableCSS.actions} ${tableCSS.delete}`}
+                                    onClick={() => deleteUserFS(user)}
                                 >
                                     <IoBanSharp />
                                 </button>
                                 <Link 
-                                    // to={`update/${user._id}`}
+                                    to={`user_details/${user.id}`}
                                     className={`${tableCSS.actions} ${tableCSS.update}`}
                                 >
                                     <HiOutlineClipboardList className={tableCSS.action_icon} />

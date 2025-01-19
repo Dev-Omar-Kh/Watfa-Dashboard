@@ -73,6 +73,13 @@
 
     "pendingWord": "Pending",
     "acceptedWord": "Accepted",
-    "declinedWord": "Declined"
+    "declinedWord": "Declined",
+
+    "warningWord": "Warning",
+    "deleteWord": "Delete",
+    "cancelWord": "Cancel",
+    "deleteUserWarning": "Are you sure you want to delete",
+
+    "detailsWord": "Details"
 
 }

@@ -73,6 +73,13 @@
 
     "pendingWord": "قيد المراجعة",
     "acceptedWord": "مقبول",
-    "declinedWord": "مرفوض"
+    "declinedWord": "مرفوض",
+
+    "warningWord" : "تحذير",
+    "deleteWord": "حذف",
+    "cancelWord": "الغاء",
+    "deleteUserWarning": "هل انت متاكد من حذف",
+
+    "detailsWord": "التفاصيل"
 
 }

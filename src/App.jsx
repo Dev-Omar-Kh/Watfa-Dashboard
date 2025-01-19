@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import Home from './Pages/Home/Home';
 import Users from './Pages/Users/Users';
 import Analytics from './Pages/Analytics/Analytics';
+import UserDetails from './Pages/Users/User_Details/UserDetails';
+import UsersLayout from './Layout/UsersLayout';
 
 const routes = createBrowserRouter(
     [
@@ -13,7 +15,12 @@ const routes = createBrowserRouter(
 
             {path: '/', element: <Home />},
             {path: '/analytics', element: <Analytics />},
-            {path: '/users', element: <Users />},
+            {path: '/users', element: <UsersLayout />, children: [
+
+                {path: '/users', element: <Users />},
+                {path: 'user_details/:id', element: <UserDetails />},
+
+            ]},
 
         ]}
 

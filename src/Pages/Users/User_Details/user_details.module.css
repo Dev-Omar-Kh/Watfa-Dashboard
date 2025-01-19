@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.container {
+
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    font-family: "Manrope", serif;
+
+}
+
+.title{
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.title a svg{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--first-color);
+
+}
+
+.title h3 {
+
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 40px;
+    color: var(--forth-color);
+
+}
+
+.user_info{
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+
+}
+
+.user_img{
+
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+
+.user_img img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.user_data{
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.user_data_cont{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.user_data_cont h3{
+
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--forth-color);
+
+}
+
+.user_data_cont p{
+
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--fifth-color);
+
+}
+
+.registration_files{
+
+    padding: 20px 40px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-radius: 12px;
+    background-color: var(--sixth-color);
+
+}
+
+.file_cont{
+
+    width: calc((100% / 3) - (20px - (20px / 3)));
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.15rem;
+    color: var(--forth-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--seconde-color);
+    box-shadow: 1px 1px 10px #00000014;
+    transition: 0.3s;
+
+    &:hover{
+
+        scale: 0.95;
+
+    }
+
+}
