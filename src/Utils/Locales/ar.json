@@ -78,8 +78,10 @@
     "warningWord" : "تحذير",
     "deleteWord": "حذف",
     "cancelWord": "الغاء",
+    "acceptWord": "قبول",
     "deleteUserWarning": "هل انت متاكد من حذف",
 
-    "detailsWord": "التفاصيل"
+    "detailsWord": "التفاصيل",
+    "sellerPaperWord": "اوراق البائع للتسجيل"
 
 }

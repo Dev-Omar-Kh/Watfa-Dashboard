@@ -1,25 +1,67 @@
-import React from 'react';
+import React, { useEffect, useState }from 'react';
+import { pdfjs, Document, Page } from 'react-pdf';
+import { motion } from 'framer-motion';
 
 import pdfViewerCSS from './pdf_viewer.module.css';
+import { IoClose } from 'react-icons/io5';
+import { ThreeCircles } from 'react-loader-spinner';
 
-// import pdfImg from '../../../Images/pdf-1.pdf';
+export default function PdfViewer({fileUrl, display}) {
 
-export default function PdfViewer() {
+    // ====== pdf-viewer ====== //
 
-    const pdfImg = 'https://res.cloudinary.com/dmkh4y8bw/image/upload/v1737311609/%D8%A3%D9%88%D8%B1%D8%A7%D9%82-%D8%A7%D9%84%D8%AA%D8%A7%D8%AC%D8%B1-%D9%84%D9%84%D8%AA%D8%B3%D8%AC%D9%8A%D9%84-%D9%A1_utj6si.pdf';
-    const decodedFileName = decodeURIComponent(pdfImg);
+    pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+        'pdfjs-dist/build/pdf.worker.min.mjs',
+        import.meta.url,
+    ).toString();
+
+    const [isLoading, setIsLoading] = useState(true);
+    const pageNumber = 1
+
+
+    useEffect(() => {
+
+        const loader = setTimeout(() => {
+            setIsLoading(false);
+        }, 500);
+
+        return () => {
+            clearTimeout(loader);
+        }
+
+    } , [])
+
+    // ====== animation ====== //
+
+    const parentVariants = {
+
+        hidden : {opacity : 0},
+        visible: {opacity : 1 , transition : {duration : 0.5 , when : 'beforeChildren'}},
+        exit : {opacity : 0 , transition : {duration : 0.5}}
+
+    }
 
     return <React.Fragment>
 
-        <div className={pdfViewerCSS.container}>
+        <motion.div variants={parentVariants} initial='hidden' animate='visible' exit={'exit'} className={pdfViewerCSS.container}>
 
-            <iframe
-                src={decodedFileName}
-                title="PDF Viewer"
-                className={pdfViewerCSS.i_frame}
-            />
+            <button className={pdfViewerCSS.close_page} onClick={() => display(false)}>
+                <IoClose />
+            </button>
 
-        </div>
+            {
+                isLoading ? <div className={pdfViewerCSS.loader}>
+                    <ThreeCircles
+                        visible={true} height="50" width="50" color="var(--seconde-color)"
+                        ariaLabel="three-circles-loading" wrapperStyle={{}} wrapperClass=""
+                    />
+                </div>
+                : <Document className={pdfViewerCSS.pdf_viewer} file={fileUrl}>
+                    <Page pageNumber={pageNumber} renderTextLayer={false} renderAnnotationLayer={false} />
+                </Document>
+            }
+
+        </motion.div>
 
     </React.Fragment>
 

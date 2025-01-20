@@ -18,26 +18,26 @@ export default function Users() {
 
     // ====== display-times-list ====== //
     
-        const [displayFilteredUsers, setDisplayFilteredUsers] = useState(false);
-        const ulRef = useRef(null);
-    
-        const handleClickOutside = (event) => {
-    
-            if (ulRef.current && !ulRef.current.contains(event.target)) {
-                setDisplayFilteredUsers(false);
-            }
-    
+    const [displayFilteredUsers, setDisplayFilteredUsers] = useState(false);
+    const ulRef = useRef(null);
+
+    const handleClickOutside = (event) => {
+
+        if (ulRef.current && !ulRef.current.contains(event.target)) {
+            setDisplayFilteredUsers(false);
+        }
+
+    };
+
+    useEffect(() => {
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
         };
-    
-        useEffect(() => {
-    
-            document.addEventListener('mousedown', handleClickOutside);
-    
-            return () => {
-                document.removeEventListener('mousedown', handleClickOutside);
-            };
-    
-        }, []);
+
+    }, []);
 
     // ====== chose-filters ====== //
 
