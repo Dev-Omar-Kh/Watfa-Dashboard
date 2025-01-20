@@ -1,10 +1,12 @@
 import React, { useEffect, useState }from 'react';
 import { pdfjs, Document, Page } from 'react-pdf';
 import { motion } from 'framer-motion';
-
-import pdfViewerCSS from './pdf_viewer.module.css';
 import { IoClose } from 'react-icons/io5';
 import { ThreeCircles } from 'react-loader-spinner';
+
+import pdfViewerCSS from './pdf_viewer.module.css';
+
+import 'react-pdf/dist/esm/Page/TextLayer.css';
 
 export default function PdfViewer({fileUrl, display}) {
 
