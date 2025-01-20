@@ -10,10 +10,12 @@ export default function PdfViewer({fileUrl, display}) {
 
     // ====== pdf-viewer ====== //
 
-    pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-        'pdfjs-dist/build/pdf.worker.min.mjs',
-        import.meta.url,
-    ).toString();
+    // pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+    //     'pdfjs-dist/build/pdf.worker.min.mjs',
+    //     import.meta.url,
+    // ).toString();
+
+    pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
     const [isLoading, setIsLoading] = useState(true);
     const pageNumber = 1
