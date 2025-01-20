@@ -16,9 +16,6 @@ export default function PdfViewer({fileUrl, display}) {
     // ).toString();
 
     pdfjs.GlobalWorkerOptions.workerSrc = `/pdfJs/pdf.worker.min.mjs`;
-    pdfjs.GlobalOptions.disableFontFace = false;
-    pdfjs.GlobalOptions.cMapUrl = '/cmaps/';
-    pdfjs.GlobalOptions.cMapPacked = true;
 
     const [isLoading, setIsLoading] = useState(true);
     const pageNumber = 1
