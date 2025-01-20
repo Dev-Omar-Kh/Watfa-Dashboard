@@ -16,6 +16,9 @@ export default function PdfViewer({fileUrl, display}) {
     // ).toString();
 
     pdfjs.GlobalWorkerOptions.workerSrc = `/pdfJs/pdf.worker.min.mjs`;
+    pdfjs.GlobalOptions.disableFontFace = false;
+    pdfjs.GlobalOptions.cMapUrl = '/cmaps/';
+    pdfjs.GlobalOptions.cMapPacked = true;
 
     const [isLoading, setIsLoading] = useState(true);
     const pageNumber = 1
@@ -59,7 +62,7 @@ export default function PdfViewer({fileUrl, display}) {
                     />
                 </div>
                 : <Document className={pdfViewerCSS.pdf_viewer} file={fileUrl}>
-                    <Page pageNumber={pageNumber} renderTextLayer={false} renderAnnotationLayer={false} />
+                    <Page pageNumber={pageNumber} renderAnnotationLayer={false} renderTextLayer={true} />
                 </Document>
             }
 
