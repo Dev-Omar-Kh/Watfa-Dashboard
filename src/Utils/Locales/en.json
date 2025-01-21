@@ -32,18 +32,18 @@
 
     "lastYearWord": "Last Year",
     "thisYearWord": "This Year",
-    "janMonth": "JAN",
-    "febMonth": "FEB",
-    "marMonth": "MAR",
-    "aprMonth": "APR",
-    "mayMonth": "MAY",
-    "junMonth": "JUN",
-    "julMonth": "JUL",
-    "augMonth": "AUG",
-    "sepMonth": "SEP",
-    "octMonth": "OCT",
-    "novMonth": "NOV",
-    "decMonth": "DEC",
+    "janMonth": "January",
+    "febMonth": "February",
+    "marMonth": "March",
+    "aprMonth": "April",
+    "mayMonth": "May",
+    "junMonth": "June",
+    "julMonth": "July",
+    "augMonth": "August",
+    "sepMonth": "September",
+    "octMonth": "October",
+    "novMonth": "November",
+    "decMonth": "December",
 
     "lastDayWord": "Last Day",
     "thisDayWord": "This Day",
@@ -82,6 +82,15 @@
     "deleteUserWarning": "Are you sure you want to delete",
 
     "detailsWord": "Details",
-    "sellerPaperWord": "seller papers for registration"
+    "sellerPaperWord": "seller papers for registration",
+
+    "allTransactionsWord": "All Transactions",
+    "pendingTransactionsWord": "Pending Transactions",
+    "paidTransactionsWord": "Paid Transactions",
+    "returnedTransactionsWord": "Returned Transactions",
+
+    "totalRevenueWord": "Total Revenue",
+    "invoicesWord": "Invoices",
+    "returnsWord": "Returns"
 
 }

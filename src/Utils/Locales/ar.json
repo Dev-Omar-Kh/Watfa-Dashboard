@@ -82,6 +82,15 @@
     "deleteUserWarning": "هل انت متاكد من حذف",
 
     "detailsWord": "التفاصيل",
-    "sellerPaperWord": "اوراق البائع للتسجيل"
+    "sellerPaperWord": "اوراق البائع للتسجيل",
+
+    "allTransactionsWord": "كل المعاملات",
+    "pendingTransactionsWord": "المعاملات المعلقة",
+    "paidTransactionsWord": "المعاملات المدفوعة",
+    "returnedTransactionsWord": "المعاملات المرتجعة",
+
+    "totalRevenueWord": "اجمالي العائدات",
+    "invoicesWord": "عدد الفواتير",
+    "returnsWord": "اجمالي المرتجعات"
 
 }

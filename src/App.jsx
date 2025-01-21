@@ -7,6 +7,7 @@ import Users from './Pages/Users/Users';
 import Analytics from './Pages/Analytics/Analytics';
 import UserDetails from './Pages/Users/User_Details/UserDetails';
 import UsersLayout from './Layout/UsersLayout';
+import Transactions from './Pages/Transactions/Transactions';
 
 const routes = createBrowserRouter(
     [
@@ -21,6 +22,7 @@ const routes = createBrowserRouter(
                 {path: 'user_details/:id', element: <UserDetails />},
 
             ]},
+            {path: '/transactions', element: <Transactions />},
 
         ]}
 
