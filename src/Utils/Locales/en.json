@@ -65,7 +65,7 @@
     "acceptedUsersWord": "Accepted Users",
     "declinedUsersWord": "Declined Users",
 
-    "userNameWord": "User Name",
+    "userNameWord": "Name",
     "emailWord": "Email",
     "phoneNumWord": "Phone Number",
     "statusWord": "Status",
@@ -91,6 +91,9 @@
 
     "totalRevenueWord": "Total Revenue",
     "invoicesWord": "Invoices",
-    "returnsWord": "Returns"
+    "returnsWord": "Returns",
+
+    "dateWord": "Date",
+    "transactionIdWord": "Transactions ID"
 
 }

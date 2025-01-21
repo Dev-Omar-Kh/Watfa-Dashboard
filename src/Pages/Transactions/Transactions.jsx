@@ -1,10 +1,12 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-
-import transactionsCSS from './transactions.module.css';
 import { useTranslation } from 'react-i18next';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { AnimatePresence, motion } from 'framer-motion';
 import RatioCard from '../../Components/Ratio_Card/RatioCard';
+
+import transactionsCSS from './transactions.module.css';
+import tableCSS from '../../Styles/tables.module.css';
+// import TransactionsData from './TransactionsData.jsx';
 
 export default function Transactions() {
 
@@ -82,18 +84,19 @@ export default function Transactions() {
     }, [result]);
 
     const [chosenTime, setChosenTime] = useState(result[0]);
-    const [spanWord1, setSpanWord1] = useState(result[0]);
 
 
-    const chooseChart = (chosenTime, changedAnalyticsData) => {
+    const chooseTime = (chosenTime) => {
 
         setChosenTime(chosenTime);
 
-        setSpanWord1(chosenTime);
-
         setDisplayFilteredUsers1(false);
 
-        // setAnalyticsData(changedAnalyticsData);
+        setDataOfTransaction(
+            TransactionsData.filter(trans => 
+                `${trans.date.split(' ')[1]} ${trans.date.split(' ')[2]}` === `${chosenTime.split(' ')[0]} ${chosenTime.split(' ')[1]}`
+            )
+        );
 
     }
 
@@ -114,13 +117,94 @@ export default function Transactions() {
         setDisplayFilteredUsers2(false);
 
         if(chosenStatus !== 'allTransactionsWord'){
-            // setUsersDataFiltered(UsersData.filter(users => users.status === DataFilter));
+            setDataOfTransaction(dataOfTransaction.filter(trans => trans.status === chosenStatus));
         }
         else{
-            // setUsersDataFiltered(UsersData);
+            setDataOfTransaction(
+                TransactionsData.filter(trans => 
+                    `${trans.date.split(' ')[1]} ${trans.date.split(' ')[2]}` === `${chosenTime.split(' ')[0]} ${chosenTime.split(' ')[1]}`
+                )
+            )
         }
 
     }
+
+    // ====== transactions-data ====== //
+
+    const TransactionsData = useMemo(() => {
+
+        const statuses = [
+            "pendingTransactionsWord",
+            "paidTransactionsWord",
+            "returnedTransactionsWord",
+        ];
+
+        const clientNames = [
+            "Yara Ali", "Omar Khaled", "Ahmed Hassan", "Laila Ahmed", "Hana Mohamed", "Mariam Khaled", "Sara Mohamed", "Hamza Saied",
+            "Mohamed Samer", "Sarah Ibrahim", "Khaled Youssef", "Mona Adel", "Hesham Fathy",
+        ];
+
+        const startDate = new Date("2023-01-01");
+        const endDate = new Date();
+
+        const getRandomDate = (start, end) => {
+
+            const date = new Date(
+                start.getTime() + Math.random() * (end.getTime() - start.getTime())
+            );
+
+            const day = date.toLocaleDateString("en-GB", { day: "2-digit" });
+            const month = date.toLocaleDateString("en-GB", { month: "short" }).toLowerCase();
+            const year = date.getFullYear();
+
+            return `${day} ${month}Month ${year}`;
+
+        };
+
+        const getRandomTransactionID = () => {
+
+            const generateRandomLetters = (length) => {
+                const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                return Array.from({ length }, () => letters[Math.floor(Math.random() * letters.length)]).join('');
+            };
+
+            const randomLetters = generateRandomLetters(4);
+            const randomNumber = Math.floor(Math.random() * 100000000);
+            return `${randomLetters}${randomNumber}`;
+
+        };
+
+        const transactions = Array.from({ length: 500 }, (_, index) => ({
+            id: index + 1,
+            clientName: clientNames[Math.floor(Math.random() * clientNames.length)],
+            date: getRandomDate(startDate, endDate),
+            transactionID: getRandomTransactionID(),
+            status: statuses[Math.floor(Math.random() * statuses.length)],
+        }));
+
+        transactions.sort((a, b) => {
+
+            const dateA = new Date(
+                a.date.split(' ')[2], new Date(Date.parse(a.date.split(' ')[1] + " 1, 2000")).getMonth(), a.date.split(' ')[0]
+            );
+
+            const dateB = new Date(
+                b.date.split(' ')[2], new Date(Date.parse(b.date.split(' ')[1] + " 1, 2000")).getMonth(), b.date.split(' ')[0]
+            );
+
+            return dateB - dateA;
+
+        });
+
+        return transactions;
+
+    }, []);
+
+    const [dataOfTransaction, setDataOfTransaction] = useState(
+        TransactionsData.filter(trans => 
+            `${trans.date.split(' ')[1]} ${trans.date.split(' ')[2]}` === `${chosenTime.split(' ')[0]} ${chosenTime.split(' ')[1]}`
+        )
+    );
 
     // ====== animation ====== //
 
@@ -145,7 +229,7 @@ export default function Transactions() {
                     <button className={transactionsCSS.time_btn} onClick={() => setDisplayFilteredUsers1(!displayFilteredUsers1)}>
 
                         <p>{t('showWord')} :</p>
-                        <span>{t(`${t(spanWord1.split(' ')[0])} ${spanWord1.split(' ')[1]}`)}</span>
+                        <span>{t(`${t(chosenTime.split(' ')[0])} ${chosenTime.split(' ')[1]}`)}</span>
 
                         {i18n.language === 'en' ? 
                             <div style={{rotate: displayFilteredUsers1 ? '90deg' : '0deg'}} className={transactionsCSS.arrowList}>
@@ -171,7 +255,7 @@ export default function Transactions() {
                                 {result.map((time, idx) => <li 
                                     key={idx}
                                     className={time === chosenTime ? transactionsCSS.chosen_time : ''} 
-                                    onClick={() => chooseChart(time)}
+                                    onClick={() => chooseTime(time)}
                                 >
                                     {`${t(time.split(' ')[0])} ${time.split(' ')[1]}`}
                                 </li>)}
@@ -240,6 +324,50 @@ export default function Transactions() {
                     </AnimatePresence>
 
                 </div>
+
+            </div>
+
+            <div className={tableCSS.table_cont}>
+
+                <table className={`${tableCSS.table} ${i18n.language === 'en' ? tableCSS.table_en : tableCSS.table_ar}`}>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>{t('userNameWord')}</th>
+                            <th>{t('dateWord')}</th>
+                            <th>{t('transactionIdWord')}</th>
+                            <th>{t('statusWord')}</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {dataOfTransaction.map( trans => <tr key={trans.id}>
+
+                            <td>{trans.clientName}</td>
+                            <td>{`${trans.date.split(' ')[0]} ${t(trans.date.split(' ')[1])} ${trans.date.split(' ')[2]}`}</td>
+                            <td>{trans.transactionID}</td>
+                            <td>
+                                <div className={`
+                                    ${tableCSS.status_span} 
+                                    ${
+                                        trans.status === 'paidTransactionsWord' ? tableCSS.accepted_span : 
+                                        trans.status === 'returnedTransactionsWord' ? tableCSS.declined_span : tableCSS.pending_span
+                                    }
+                                `}>
+                                    {t(trans.status)}
+                                </div>
+                            </td>
+
+                        </tr>)}
+
+                    </tbody>
+
+                </table>
 
             </div>
 

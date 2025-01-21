@@ -65,7 +65,7 @@
     "acceptedUsersWord": "المقبولين",
     "declinedUsersWord": "المرفوضين",
 
-    "userNameWord": "اسم المستخدم",
+    "userNameWord": "الاسم",
     "emailWord": "الايميل",
     "phoneNumWord": "رقم الهاتف",
     "statusWord": "الحالة",
@@ -91,6 +91,9 @@
 
     "totalRevenueWord": "اجمالي العائدات",
     "invoicesWord": "عدد الفواتير",
-    "returnsWord": "اجمالي المرتجعات"
+    "returnsWord": "اجمالي المرتجعات",
+
+    "dateWord": "التاريخ",
+    "transactionIdWord": "معرف المعاملة"
 
 }
