@@ -117,14 +117,14 @@ export default function Transactions() {
         setDisplayFilteredUsers2(false);
 
         if(chosenStatus !== 'allTransactionsWord'){
-            setDataOfTransaction(dataOfTransaction.filter(trans => trans.status === chosenStatus));
+            setDataOfTransaction(TransactionsData.filter(trans => 
+                `${trans.date.split(' ')[1]} ${trans.date.split(' ')[2]}` === `${chosenTime.split(' ')[0]} ${chosenTime.split(' ')[1]}`
+            ).filter(trans => trans.status === chosenStatus));
         }
         else{
-            setDataOfTransaction(
-                TransactionsData.filter(trans => 
-                    `${trans.date.split(' ')[1]} ${trans.date.split(' ')[2]}` === `${chosenTime.split(' ')[0]} ${chosenTime.split(' ')[1]}`
-                )
-            )
+            setDataOfTransaction(TransactionsData.filter(trans => 
+                `${trans.date.split(' ')[1]} ${trans.date.split(' ')[2]}` === `${chosenTime.split(' ')[0]} ${chosenTime.split(' ')[1]}`
+            ));
         }
 
     }
