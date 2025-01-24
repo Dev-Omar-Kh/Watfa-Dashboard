@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Layout from './Layout/Layout';
 import { useTranslation } from 'react-i18next';
+import Layout from './Layout/Dashboard/Layout';
 import Home from './Pages/Home/Home';
 import Users from './Pages/Users/Users';
 import Analytics from './Pages/Analytics/Analytics';
 import UserDetails from './Pages/Users/User_Details/UserDetails';
-import UsersLayout from './Layout/UsersLayout';
+import UsersLayout from './Layout/User_Layout/UsersLayout';
 import Transactions from './Pages/Transactions/Transactions';
+import Settings from './Pages/Settings/Settings';
+import Notification from './Pages/Notification/Notification';
+import NotificationLayout from './Layout/Notification_Layout/NotificationLayout';
+import SingleNote from './Pages/Notification/Single_Note/SingleNote';
 
 const routes = createBrowserRouter(
     [
@@ -23,6 +27,14 @@ const routes = createBrowserRouter(
 
             ]},
             {path: '/transactions', element: <Transactions />},
+            {path: '/setting', element: <Settings />},
+
+        ]},
+
+        {path: '/notifications', element: <NotificationLayout />, children: [
+
+            {path: '/notifications', element: <Notification />},
+            {path: 'note/:id', element: <SingleNote />},
 
         ]}
 

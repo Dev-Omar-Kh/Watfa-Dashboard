@@ -6,7 +6,6 @@ import {Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement,
 
 import homeCSS from './home.module.css';
 import { useTranslation } from 'react-i18next';
-// import { Helmet } from 'react-helmet';
 
 export default function Home() {
 
@@ -25,19 +24,17 @@ export default function Home() {
 
     // ====== custom-charts ====== //
 
-    const [dayChart, setDayChart] = useState(false);
-    const [weekChart, setWeekChart] = useState(true);
-    const [monthChart, setMonthChart] = useState(false);
+    const [chosenTime, setChosenTime] = useState('weeklyWord')
 
     const chooseChart = (chartType) => {
 
-        setDayChart(chartType === setDayChart);
-        setWeekChart(chartType === setWeekChart);
-        setMonthChart(chartType === setMonthChart);
+        setChosenTime(chartType);
 
     }
 
     // ====== charts-data ====== //
+
+    const timeValues = ['todayWord', 'weeklyWord', 'yearlyWord'];
 
     const allLabels = {
 
@@ -73,13 +70,17 @@ export default function Home() {
 
     const data = {
 
-        labels: dayChart ? allLabels.day : weekChart ? allLabels.week : allLabels.month,
+        labels: chosenTime === 'todayWord' ? allLabels.day : chosenTime === 'weeklyWord' ? allLabels.week : allLabels.month,
 
         datasets: [
 
             {
-                label: dayChart ? t('lastDayWord') : weekChart ? t('lastWeekWord') : t('lastYearWord'),
-                data: dayChart ? allDataset.day.lastDay : weekChart ? allDataset.week.lastWeek : allDataset.month.lastMonth,
+                label: chosenTime === 'todayWord' ? t('lastDayWord') : 
+                    chosenTime === 'weeklyWord' ? t('lastWeekWord') : t('lastYearWord')
+                ,
+                data: chosenTime === 'todayWord' ? allDataset.day.lastDay : 
+                    chosenTime === 'weeklyWord' ? allDataset.week.lastWeek : allDataset.month.lastMonth
+                ,
                 borderColor: "rgba(255, 99, 132, 1)",
                 backgroundColor: "rgba(255, 99, 132, 0.2)",
                 tension: 0.3,
@@ -89,8 +90,12 @@ export default function Home() {
             },
 
             {
-                label: dayChart ? t('thisDayWord') : weekChart ? t('thisWeekWord') : t('thisYearWord'),
-                data: dayChart ? allDataset.day.thisDay : weekChart ? allDataset.week.thisWeek : allDataset.month.thisMonth,
+                label: chosenTime === 'todayWord' ? t('thisDayWord') : 
+                    chosenTime === 'weeklyWord' ? t('thisWeekWord') : t('thisYearWord')
+                ,
+                data: chosenTime === 'todayWord' ? allDataset.day.thisDay : 
+                    chosenTime === 'weeklyWord' ? allDataset.week.thisWeek : allDataset.month.thisMonth
+                ,
                 borderColor: "rgba(54, 162, 235, 1)",
                 backgroundColor: "rgba(54, 162, 235, 0.2)",
                 tension: 0.3,
@@ -185,20 +190,12 @@ export default function Home() {
 
                     <div className={homeCSS.sort_list}>
 
-                        <button 
-                            style={dayChart ? {borderColor: 'var(--first-color)', color: 'var(--first-color)'} : {}}
-                            onClick={() => chooseChart(setDayChart)}
-                        >{t('todayWord')}</button>
-
-                        <button 
-                            style={weekChart ? {borderColor: 'var(--first-color)', color: 'var(--first-color)'} : {}}
-                            onClick={() => chooseChart(setWeekChart)}
-                        >{t('weeklyWord')}</button>
-
-                        <button 
-                            style={monthChart ? {borderColor: 'var(--first-color)', color: 'var(--first-color)'} : {}}
-                            onClick={() => chooseChart(setMonthChart)}
-                        >{t('yearlyWord')}</button>
+                        {timeValues.map((time, idx) => <button 
+                            style={chosenTime === time ? {borderColor: 'var(--first-color)', color: 'var(--first-color)'} : {}}
+                            key={idx} onClick={() => chooseChart(time)}
+                        >
+                            {t(time)}
+                        </button>)}
 
                     </div>
 

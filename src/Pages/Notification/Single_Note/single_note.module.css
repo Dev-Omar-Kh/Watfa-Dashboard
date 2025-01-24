@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.container {
+
+    width: 100%;
+    padding: 50px 4.5%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    font-family: "Manrope", serif;
+
+}
+
+.title {
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.title a svg {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--first-color);
+
+}
+
+.title h3 {
+
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 40px;
+    color: var(--forth-color);
+
+}
+
+.note_cont{
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+}
+
+.user_data{
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.user_data img{
+
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 50%;
+
+}
+
+.user_name{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.user_name h3{
+
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--forth-color);
+
+}
+
+.user_name p{
+
+    font-size: 1.15rem;
+    color: var(--fifth-color);
+
+}
+
+.note_msg{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.msg_cont{
+
+    max-width: 80%;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--sixth-color);
+
+}
+
+.msg_cont p{
+
+    font-size: 1.15rem;
+    color: var(--forth-color);
+
+}
+
+/* ====== responsive-style ====== */
+
+@media only screen and (max-width: 500px){
+
+    .msg_cont{
+
+        min-width: 100%;
+
+    }
+
+}

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.container {
+
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    font-family: "Manrope", serif;
+
+}
+
+.title {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+}
+
+.title h3 {
+
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 40px;
+    color: var(--forth-color);
+
+}
+
+.sub_title {
+
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 40px;
+    color: var(--forth-color);
+
+}
+
+.mail_sec, .pass_edit{
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+}
+
+.form{
+
+    width: 100%;
+    display: flex;
+    gap: 20px;
+
+}
+
+.input_cont{
+
+    width: 100% !important;
+    min-width: 300px !important;
+
+}
+
+/* ====== responsive-style ====== */
+
+@media only screen and (max-width: 500px){
+
+    .form{
+
+        flex-wrap: wrap;
+
+    }
+
+    .submit_btn{
+
+        width: 100% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+}

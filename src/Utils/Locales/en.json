@@ -5,8 +5,9 @@
     "users_word": "Users",
     "transactions_word": "Transactions",
     "setting_word": "Settings",
-    "profileWord": "Profile",
+    "logOutWord": "Log Out",
     "notificationWord": "Notifications",
+    "singleNotificationWord": "Notification",
     "LanguageWord": "Language",
     "arabicWord": "Arabic",
     "englishWord": "English",
@@ -94,6 +95,20 @@
     "returnsWord": "Returns",
 
     "dateWord": "Date",
-    "transactionIdWord": "Transactions ID"
+    "transactionIdWord": "Transactions ID",
+
+    "accountSettingWord": "Account Setting",
+    "emailAddressWord": "Email Address",
+    "saveChangeWord": "Save Change",
+    "editEmailWord": "Edit",
+    "resetPasswordWord": "Reset Password",
+    "currentPasswordWord": "current Password",
+    "newPasswordWord": "new Password",
+    "enterTheWord": "Enter the",
+
+    "userDocumentationWord": "User Documentation",
+    "userProblemWord": "User Problem",
+    "amWord": "AM",
+    "pmWord": "PM"
 
 }

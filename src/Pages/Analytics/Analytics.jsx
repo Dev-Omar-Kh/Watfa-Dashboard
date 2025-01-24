@@ -39,28 +39,28 @@ export default function Analytics() {
 
     // ====== analytics-data ====== //
 
-    const analyticsDataThisYear = [
+    const allAnalyticsData = {
 
-        {id: 0, title: 'salesWord', num: '$ 48.8K', rate: '+3.4%'},
-        {id: 1, title: 'returnWord', num: '$ 12.2K', rate: '-1.2%'},
+        thisYearWord: [
+            {id: 0, title: 'salesWord', num: '$ 48.8K', rate: '+3.4%'},
+            {id: 1, title: 'returnWord', num: '$ 12.2K', rate: '-1.2%'},
+        ],
 
-    ];
+        thisWeekWord: [
+            {id: 0, title: 'salesWord', num: '$ 16.3K', rate: '+2.1%'},
+            {id: 1, title: 'returnWord', num: '$ 8.6K', rate: '-1.8%'},
+        ],
 
-    const analyticsDataThisWeek = [
+        thisDayWord: [
+            {id: 0, title: 'salesWord', num: '$ 6.4K', rate: '+1.3%'},
+            {id: 1, title: 'returnWord', num: '$ 2.2K', rate: '-1.1%'},
+        ]
 
-        {id: 0, title: 'salesWord', num: '$ 16.3K', rate: '+2.1%'},
-        {id: 1, title: 'returnWord', num: '$ 8.6K', rate: '-1.8%'},
-
-    ];
-
-    const analyticsDataThisDay = [
-
-        {id: 0, title: 'salesWord', num: '$ 6.4K', rate: '+1.3%'},
-        {id: 1, title: 'returnWord', num: '$ 2.2K', rate: '-1.1%'},
-
-    ];
+    }
 
     // ====== sales-return-data ====== //
+
+    const timeValues = ['thisYearWord', 'thisWeekWord', 'thisDayWord'];
 
     const allLabels = {
 
@@ -94,24 +94,15 @@ export default function Analytics() {
 
     // ====== chose-time ====== //
 
-    const [yearTime, setYearTime] = useState(true);
-    const [weekTime, setWeekTime] = useState(false);
-    const [dayTime, setDayTime] = useState(false);
-    const [spanWord, setSpanWord] = useState('thisYearWord');
+    const [chosenTimeState, setChosenTimeState] = useState('thisYearWord')
 
-    const [analyticsData, setAnalyticsData] = useState(analyticsDataThisYear);
+    const [analyticsData, setAnalyticsData] = useState(allAnalyticsData.thisYearWord);
 
-    const chooseChart = (chosenTime, spanTime, changedAnalyticsData) => {
+    const chooseChart = (chosenTime) => {
 
-        setYearTime(chosenTime === setYearTime);
-        setWeekTime(chosenTime === setWeekTime);
-        setDayTime(chosenTime === setDayTime);
-
-        setSpanWord(spanTime);
-
+        setChosenTimeState(chosenTime);
         setDisplayAllTimes(false);
-
-        setAnalyticsData(changedAnalyticsData);
+        setAnalyticsData(allAnalyticsData[chosenTime]);
 
     }
 
@@ -131,13 +122,19 @@ export default function Analytics() {
     
     const data = {
 
-        labels: dayTime ? allLabels.day : weekTime ? allLabels.week : allLabels.month,
+        labels: chosenTimeState === 'thisDayWord' ? allLabels.day : 
+            chosenTimeState === 'thisWeekWord' ? allLabels.week : allLabels.month
+        ,
 
         datasets: [
 
             {
-                label: dayTime ? t('lastDayWord') : weekTime ? t('lastWeekWord') : t('lastYearWord'),
-                data: dayTime ? allDataset.day.return : weekTime ? allDataset.week.return : allDataset.month.return,
+                label: chosenTimeState === 'thisDayWord' ? t('lastDayWord') : 
+                    chosenTimeState === 'thisWeekWord' ? t('lastWeekWord') : t('lastYearWord')
+                ,
+                data: chosenTimeState === 'thisDayWord' ? allDataset.day.return : 
+                    chosenTimeState === 'thisWeekWord' ? allDataset.week.return : allDataset.month.return
+                ,
                 borderColor: "rgba(255, 99, 132, 1)",
                 backgroundColor: "rgba(255, 99, 132, 0.2)",
                 tension: 0.3,
@@ -147,8 +144,12 @@ export default function Analytics() {
             },
 
             {
-                label: dayTime ? t('thisDayWord') : weekTime ? t('thisWeekWord') : t('thisYearWord'),
-                data: dayTime ? allDataset.day.sales : weekTime ? allDataset.week.sales : allDataset.month.sales,
+                label: chosenTimeState === 'thisDayWord' ? t('thisDayWord') : 
+                    chosenTimeState === 'thisWeekWord' ? t('thisWeekWord') : t('thisYearWord')
+                ,
+                data: chosenTimeState === 'thisDayWord' ? allDataset.day.sales : 
+                    chosenTimeState === 'thisWeekWord' ? allDataset.week.sales : allDataset.month.sales
+                ,
                 borderColor: "rgba(54, 162, 235, 1)",
                 backgroundColor: "rgba(54, 162, 235, 0.2)",
                 tension: 0.3,
@@ -236,7 +237,7 @@ export default function Analytics() {
                     <button className={analyticsCSS.time_btn} onClick={() => setDisplayAllTimes(!displayAllTimes)}>
 
                         <p>{t('showWord')} :</p>
-                        <span>{t(spanWord)}</span>
+                        <span>{t(chosenTimeState)}</span>
 
                         {i18n.language === 'en' ? 
                             <div style={{rotate: displayAllTimes ? '90deg' : '0deg'}} className={analyticsCSS.arrowList}>
@@ -259,24 +260,12 @@ export default function Analytics() {
                                 variants={listAnimation} initial='hidden' animate='visible' exit={'exit'}
                             >
 
-                                <li 
-                                    className={yearTime ? analyticsCSS.chosen_time : ''} 
-                                    onClick={() => chooseChart(setYearTime, 'thisYearWord', analyticsDataThisYear)}
+                                {timeValues.map((time, idx) => <li 
+                                    className={chosenTimeState === time ? analyticsCSS.chosen_time : ''} key={idx}
+                                    onClick={() => chooseChart(time)}
                                 >
-                                    {t('thisYearWord')}
-                                </li>
-                                <li 
-                                    className={weekTime ? analyticsCSS.chosen_time : ''} 
-                                    onClick={() => chooseChart(setWeekTime, 'thisWeekWord', analyticsDataThisWeek)}
-                                >
-                                    {t('thisWeekWord')}
-                                </li>
-                                <li 
-                                    className={dayTime ? analyticsCSS.chosen_time : ''} 
-                                    onClick={() => chooseChart(setDayTime, 'thisDayWord', analyticsDataThisDay)}
-                                >
-                                    {t('thisDayWord')}
-                                </li>
+                                    {t(time)}
+                                </li>)}
 
                             </motion.ul>
 

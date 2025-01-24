@@ -2,20 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { LuChartSpline, LuUsersRound } from 'react-icons/lu';
 import { FaArrowsTurnToDots } from 'react-icons/fa6';
-import { IoCloseCircleOutline, IoNotificationsOutline, IoPerson, IoSettingsOutline } from 'react-icons/io5';
+import { IoCloseCircleOutline, IoNotificationsOutline, IoSettingsOutline } from 'react-icons/io5';
 import { useTranslation } from 'react-i18next';
 import {motion} from 'framer-motion';
+import { IoIosArrowBack, IoIosArrowForward, IoIosGlobe, IoMdLogOut } from 'react-icons/io';
+import { AnimatePresence } from 'framer-motion';
+import { BsPatchCheck } from 'react-icons/bs';
+import { RxDashboard } from 'react-icons/rx';
 
 import sideBarCSS from './side_bar.module.css';
-import './active.css';
-
-import { RxDashboard } from 'react-icons/rx';
+import '../../Styles/active.css';
 
 import logo from '../../Images/logo.png';
 import minLogo from '../../Images/icon.png'
-import { IoIosArrowBack, IoIosArrowForward, IoIosGlobe } from 'react-icons/io';
-import { AnimatePresence } from 'framer-motion';
-import { BsPatchCheck } from 'react-icons/bs';
 
 export default function SideBar({displayNav}) {
 
@@ -140,8 +139,8 @@ export default function SideBar({displayNav}) {
 
                     <li className={sideBarCSS.actions_phone}>
                         <NavLink onClick={() => displayNav(false)} className='side_bar_link' to={'/profile'}>
-                            <IoPerson />
-                            <p>{t('profileWord')}</p>
+                            <IoMdLogOut />
+                            <p>{t('logOutWord')}</p>
                         </NavLink>
                     </li>
 

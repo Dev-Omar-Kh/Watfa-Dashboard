@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import LayoutCSS from './layout.module.css';
-import SideBar from '../Components/Side_Bar/SideBar';
+import SideBar from '../../Components/Side_Bar/SideBar';
 import { useTranslation } from 'react-i18next';
-import Header from '../Components/Header/Header';
+import Header from '../../Components/Header/Header';
 
 export default function Layout() {
 

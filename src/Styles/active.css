@@ -4,3 +4,10 @@
     background-color: var(--third-color) !important;
 
 }
+
+.header_link.active{
+
+    color: var(--seconde-color);
+    background-color: var(--first-color);
+
+}

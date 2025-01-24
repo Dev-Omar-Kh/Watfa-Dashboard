@@ -39,31 +39,25 @@ export default function Users() {
 
     }, []);
 
+    // ====== users-type-data ====== //
+
+    const usersType = ['allUsersWord', 'pendingWord', 'acceptedWord', 'declinedWord'];
+
     // ====== chose-filters ====== //
 
-    const [allUsers, setAllUsers] = useState(true);
-    const [pendingUsers, setPendingUsers] = useState(false);
-    const [acceptedUsers, setAcceptedUsers] = useState(false);
-    const [declinedUsers, setDeclinedUsers] = useState(false);
-
-    const [spanWord, setSpanWord] = useState('allUsersWord');
+    const [chosenType, setChosenType] = useState('allUsersWord');
 
     const [usersDataFiltered, setUsersDataFiltered] = useState(UsersData);
 
-    const chooseUsersStatus = (chosenStatus, spanStatus, DataFilter) => {
+    const chooseUsersStatus = (chosenStatus) => {
 
-        setAllUsers(chosenStatus === setAllUsers);
-        setPendingUsers(chosenStatus === setPendingUsers);
-        setAcceptedUsers(chosenStatus === setAcceptedUsers);
-        setDeclinedUsers(chosenStatus === setDeclinedUsers);
-
-        setSpanWord(spanStatus);
+        setChosenType(chosenStatus);
 
         setDisplayFilteredUsers(false);
 
-        if(DataFilter !== 'all'){
+        if(chosenStatus !== 'all'){
 
-            setUsersDataFiltered(UsersData.filter(users => users.status === DataFilter));
+            setUsersDataFiltered(UsersData.filter(users => users.status === chosenStatus));
 
         }
         else{
@@ -120,7 +114,7 @@ export default function Users() {
                     <button className={usersCSS.time_btn} onClick={() => setDisplayFilteredUsers(!displayFilteredUsers)}>
 
                         <p>{t('filterWord')} :</p>
-                        <span>{t(spanWord)}</span>
+                        <span>{t(chosenType)}</span>
 
                         {i18n.language === 'en' ? 
                             <div style={{rotate: displayFilteredUsers ? '90deg' : '0deg'}} className={usersCSS.arrowList}>
@@ -143,33 +137,12 @@ export default function Users() {
                                 variants={listAnimation} initial='hidden' animate='visible' exit={'exit'}
                             >
 
-                                <li 
-                                    className={allUsers ? usersCSS.chosen_time : ''} 
-                                    onClick={() => chooseUsersStatus(setAllUsers, 'allUsersWord', 'all')}
+                                {usersType.map((type, idx) => <li 
+                                    className={chosenType === type ? usersCSS.chosen_time : ''} key={idx}
+                                    onClick={() => chooseUsersStatus(type)}
                                 >
-                                    {t('allUsersWord')}
-                                </li>
-
-                                <li 
-                                    className={pendingUsers ? usersCSS.chosen_time : ''} 
-                                    onClick={() => chooseUsersStatus(setPendingUsers, 'pendingUsersWord', 'pendingWord')}
-                                >
-                                    {t('pendingUsersWord')}
-                                </li>
-
-                                <li 
-                                    className={acceptedUsers ? usersCSS.chosen_time : ''} 
-                                    onClick={() => chooseUsersStatus(setAcceptedUsers, 'acceptedUsersWord', 'acceptedWord')}
-                                >
-                                    {t('acceptedUsersWord')}
-                                </li>
-
-                                <li 
-                                    className={declinedUsers ? usersCSS.chosen_time : ''} 
-                                    onClick={() => chooseUsersStatus(setDeclinedUsers, 'declinedUsersWord', 'declinedWord')}
-                                >
-                                    {t('declinedUsersWord')}
-                                </li>
+                                    {t(type)}
+                                </li>)}
 
                             </motion.ul>
 

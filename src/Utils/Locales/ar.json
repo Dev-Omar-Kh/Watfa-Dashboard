@@ -5,8 +5,9 @@
     "users_word": "المستخدمون",
     "transactions_word": "التحويلات",
     "setting_word": "الاعدادات",
-    "profileWord": "الملف الشخصي",
+    "logOutWord": "تسجيل خروج",
     "notificationWord": "الاشعارات",
+    "singleNotificationWord": "الاشعار",
     "LanguageWord": "اللغة",
     "arabicWord": "العربية",
     "englishWord": "الانجليزية",
@@ -94,6 +95,20 @@
     "returnsWord": "اجمالي المرتجعات",
 
     "dateWord": "التاريخ",
-    "transactionIdWord": "معرف المعاملة"
+    "transactionIdWord": "معرف المعاملة",
+
+    "accountSettingWord": "اعدادات الحساب",
+    "emailAddressWord": "الايميل",
+    "saveChangeWord": "حفظ التعديلات",
+    "editEmailWord": "تعديل",
+    "resetPasswordWord": "اعادة تعيين كلمة المرور",
+    "currentPasswordWord": "كلمة المرور الحالية",
+    "newPasswordWord": "كلمة المرور الجديدة",
+    "enterTheWord": "ادخل",
+
+    "userDocumentationWord": "وثائق المستخدم",
+    "userProblemWord": "مشكلة مستخدم",
+    "amWord": "ص",
+    "pmWord": "م"
 
 }

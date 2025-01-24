@@ -1,9 +1,11 @@
 import React from 'react';
+import Search from '../Search_Bar/Search';
+import { Link, NavLink } from 'react-router-dom';
+import { IoMenu, IoNotificationsOutline } from 'react-icons/io5';
+import { IoMdLogOut } from 'react-icons/io';
 
 import headerCSS from './header.module.css';
-import Search from '../Search_Bar/Search';
-import { Link } from 'react-router-dom';
-import { IoMenu, IoNotificationsOutline, IoPerson } from 'react-icons/io5';
+import '../../Styles/active.css';
 
 export default function Header({displayPhoneNav}) {
 
@@ -11,7 +13,7 @@ export default function Header({displayPhoneNav}) {
 
         <div className={headerCSS.container}>
 
-            <Search />
+            <Search location={'header'} />
 
             <div className={headerCSS.actions}>
 
@@ -21,12 +23,12 @@ export default function Header({displayPhoneNav}) {
 
                 </div>
 
-                <Link className={headerCSS.action}>
+                <NavLink to={'/notifications'} className={`${headerCSS.action} header_link`}>
                     <IoNotificationsOutline />
-                </Link>
+                </NavLink>
 
                 <Link className={headerCSS.action}>
-                    <IoPerson />
+                    <IoMdLogOut />
                 </Link>
 
             </div>

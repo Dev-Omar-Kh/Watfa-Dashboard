@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.container{
+
+    width: 100%;
+    padding: 50px 4.5%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    font-family: "Manrope", serif;
+
+}
+
+.title {
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.title a svg {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--first-color);
+
+}
+
+.title h3 {
+
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 40px;
+    color: var(--forth-color);
+
+}
+
+.notes_cont{
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: var(--sixth-color);
+    overflow: hidden;
+
+}
+
+.notes_scroll{
+
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+
+}
+
+.note_box{
+
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--fifth-color);
+
+    &:last-child{
+
+        border-bottom: none;
+
+    }
+
+}
+
+.right_side_note{
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.right_side_note span{
+
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+
+}
+
+.right_side_note img{
+
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+.note_data{
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.note_data h3{
+
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--forth-color);
+
+}
+
+.note_data p{
+
+    font-size: 1rem;
+    color: var(--fifth-color);
+
+}
+
+.left_side_note p{
+
+    font-size: 1.15rem;
+    color: var(--fifth-color);
+
+}
+
+/* ====== responsive-style ====== */
+
+@media only screen and (max-width: 640px){
+
+    .left_side_note{
+
+        display: none;
+
+    }
+
+    .right_side_note span{
+
+        width: 5px;
+        height: 5px;
+
+    }
+
+    .right_side_note img{
+
+        width: 40px;
+        height: 40px;
+
+    }
+
+    .note_data h3{
+
+        font-size: 0.75rem;
+
+    }
+
+    .note_data p{
+
+        font-size: 0.6rem;
+
+    }
+
+}
