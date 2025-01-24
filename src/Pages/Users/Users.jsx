@@ -55,7 +55,7 @@ export default function Users() {
 
         setDisplayFilteredUsers(false);
 
-        if(chosenStatus !== 'all'){
+        if(chosenStatus !== 'allUsersWord'){
 
             setUsersDataFiltered(UsersData.filter(users => users.status === chosenStatus));
 
