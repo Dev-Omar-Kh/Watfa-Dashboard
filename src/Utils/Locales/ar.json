@@ -109,6 +109,11 @@
     "userDocumentationWord": "وثائق المستخدم",
     "userProblemWord": "مشكلة مستخدم",
     "amWord": "ص",
-    "pmWord": "م"
+    "pmWord": "م",
+
+    "enterYourEmailWord": "ادخل الايميل",
+    "enterYourPasswordWord": "ادخل كلمة المرور",
+    "forgetPasswordWord": "نسيت كلمة السر",
+    "loginWord": "تسجيل دخول"
 
 }

@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.container{
+
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    padding: 50px 4.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Manrope", serif;
+    background-image:
+        linear-gradient(to bottom right, var(--thirteenth-color), var(--thirteenth-color)),
+        url('../Images/auth_bg.jpg');
+    ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.tr_btn{
+
+    position: absolute;
+    top: 20px;
+
+}
+
+.form_cont{
+
+    width: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    border-radius: 12px;
+    background-color: var(--seconde-color);
+
+}
+
+.logo{
+
+    height: 30px;
+    width: fit-content;
+
+}
+
+.form{
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+/* ====== responsive-style ====== */
+
+@media only screen and (max-width: 600px){
+
+    .form_cont{
+
+        width: 100%;
+
+    }
+
+}

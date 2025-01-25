@@ -109,6 +109,11 @@
     "userDocumentationWord": "User Documentation",
     "userProblemWord": "User Problem",
     "amWord": "AM",
-    "pmWord": "PM"
+    "pmWord": "PM",
+
+    "enterYourEmailWord": "Enter Your Email",
+    "enterYourPasswordWord": "Enter Your Password",
+    "forgetPasswordWord": "Forget Password",
+    "loginWord": "Login"
 
 }

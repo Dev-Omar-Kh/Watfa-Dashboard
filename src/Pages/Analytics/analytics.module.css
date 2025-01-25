@@ -105,8 +105,8 @@
 
 .chosen_time{
 
-    background-color: var(--first-color) !important;
     color: var(--seconde-color) !important;
+    background-color: var(--first-color) !important;
 
 }
 
