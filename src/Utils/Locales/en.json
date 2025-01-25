@@ -114,6 +114,9 @@
     "enterYourEmailWord": "Enter Your Email",
     "enterYourPasswordWord": "Enter Your Password",
     "forgetPasswordWord": "Forget Password",
-    "loginWord": "Login"
+    "loginWord": "Login",
+
+    "errorSentence": "This page is no longer available!",
+    "goBackWord": "Go Back"
 
 }

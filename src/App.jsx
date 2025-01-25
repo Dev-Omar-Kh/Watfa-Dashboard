@@ -13,6 +13,7 @@ import Notification from './Pages/Notification/Notification';
 import NotificationLayout from './Layout/Notification_Layout/NotificationLayout';
 import SingleNote from './Pages/Notification/Single_Note/SingleNote';
 import Auth from './Authentication/Auth';
+import Error from './Pages/Error/Error';
 
 const routes = createBrowserRouter(
     [
@@ -39,7 +40,9 @@ const routes = createBrowserRouter(
 
         ]},
 
-        {path: '/login', element: <Auth />}
+        {path: '/login', element: <Auth />},
+
+        {path: '*', element: <Error />},
 
     ],
 

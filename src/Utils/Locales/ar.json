@@ -114,6 +114,9 @@
     "enterYourEmailWord": "ادخل الايميل",
     "enterYourPasswordWord": "ادخل كلمة المرور",
     "forgetPasswordWord": "نسيت كلمة السر",
-    "loginWord": "تسجيل دخول"
+    "loginWord": "تسجيل دخول",
+
+    "errorSentence": "هذه الصفحة لم تعد متاحة حاليا!",
+    "goBackWord": "رجوع"
 
 }
